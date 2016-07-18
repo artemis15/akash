@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../libs/angular.min.js"></script>
+    <script src="../controller/app.js"></script>
+</head>
+<body ng-app="myApp">
+    <!--<div ng-controller="clickCtrl">-->
+       <!--<div ng-click="myData.doClick($event)">click me!</div>-->
+    <div ng-controller="applyCtrl">
+        {{data.time}}
+        <br/>
+        <button ng-click="updateTime()">update time -ngClick</button>
+        <button id="updateTimeBtn">Update TIme</button>
+    </div>
+</body>
+</html>

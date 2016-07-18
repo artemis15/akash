@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artemis Angular</title>
+    <script src="../libs/angular.min.js"></script>
+    <script src="../controller/app.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="switchCtrl">
+        <div ng-switch on="myData.switch">
+            <div ng-switch-when="1">Show when switch is 1</div>
+            <div ng-switch-when="2">Show when switch is 2</div>
+            <div ng-switch-default>Show when switch is nything else than 1 and 2</div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

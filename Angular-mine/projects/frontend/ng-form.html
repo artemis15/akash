@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artemis Angular</title>
+    <script src="../libs/angular.min.js"></script>
+    <script src="../controller/app.js"></script>
+    <style>
+        .fieldValid {
+            border: 1px solid #00ff00;
+        }
+        .fieldInvalid {
+            border: 1px solid #ff0000;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+<div ng-controller="formCtrl">
+    <form>
+        First name: <input type="text" name="firstName" ng-model="myForm.firstName">  <br/>
+        Last name: <input type="text" name="lastName"  ng-model="myForm.lastName">  <br/>
+    </form>
+    <div>
+        {{myForm.firstName}} {{myForm.lastName}}
+    </div>
+</div>
+<hr/>
+<div ng-controller="chkCtrl">
+    <form>
+        Are you Male? <input type="checkbox" ng-model="myForm.areyoumale"/>
+    </form>
+    <div>
+        Your CheckBox is {{myForm.areyoumale}}
+    </div>
+</div>
+<hr/>
+<div ng-controller="radioCtrl">
+    <form>
+        What type of News Letter u want?<br/>
+        <input type="radio" ng-model="myForm.whichNewsletter" value="weeklyNews">Weekly News
+        <input type="radio" ng-model="myForm.whichNewsletter" value="monthlyNews">Monthly News
+    </form>
+    <div>
+        u want {{myForm.whichNewsletter}}
+    </div>
+</div>
+<hr/>
+<div ng-controller="optionCtrl">
+    <form>
+        <select ng-model="myForm.car" ng-options="obj.id as obj.name for obj in myForm.options">
+        </select>
+    </form>
+
+    <div>
+        <div ng-if="myForm.car!=''">
+            Hippy! you have <b>{{myForm.car}}</b> car. Wow!!!! Can you gift it to me :-) plzzz
+        </div>
+        <div ng-if="myForm.car==''">
+            Oops! you need to have some money to buy a car :P
+        </div>
+    </div>
+</div>
+<hr/>
+<h3>Okay giving you one more chance, You can select multiple cars</h3>
+<div ng-controller="optionCtrl">
+    <form>
+        <select ng-model="myForm.car" multiple ng-options="obj.id as obj.name for obj in myForm.options">
+        </select>
+    </form>
+
+    <div>
+        <div ng-if="myForm.car!=''">
+            Hippy! you have <b>{{myForm.car}}</b> car. Wow!!!! Can you gift it to me :-) plzzz
+        </div>
+        <div ng-if="myForm.car==''">
+            Oops! you need to have some money to buy a car :P
+        </div>
+    </div>
+</div>
+<hr/>
+<div ng-if="valView">
+    <h3>Lets have some validation Now!</h3>
+    <h4>Min & Max Validation</h4>
+    <div ng-controller="minmaxValCtrl">
+        <form>
+            Name: <input type="text" name="name" ng-model="myForm.name" ng-minlength="5" ng-maxlength="12">  <br/>
+        </form>
+        Name is: {{myForm.name}}
+    </div>
+    <h4>Pattern Validation</h4>
+    <div ng-controller="patternCtrl">
+        <ng-form name="mailForm">
+            Email: <input type="text" ng-model="email" name="mail" ng-pattern="re" /><br />
+            <span ng-show="mailForm.mail.$error.pattern" style="color:red">Please enter correct email address.</span>
+        </ng-form>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

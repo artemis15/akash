@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artemis Angular</title>
+    <script src="../libs/angular.min.js"></script>
+    <script src="../controller/app.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="includeCtrl">
+
+    <div ng-include="myData.showIt && 'fragment.html' || 'fragment1.html'"></div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artemis Angular</title>
+    <script src="../libs/angular.min.js"></script>
+    <script src="../controller/app.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="repeatCtrl">
+    <ol>
+        <!--<li ng-repeat="item in myData.items | filter:filterArray">-->
+        <li ng-repeat="item in myData.items | orderBy:sortField:reverse">
+            {{item.text}} : {{$first}}, {{$middle}}, {{$last}}
+        </li>
+    </ol>
+    <div>Filtered: {{myData.textAk | myFilter:2:4}}</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../libs/angular.min.js"></script>
+    <script src="../controller/app.js"></script>
+</head>
+<body ng-app="myApp">
+    <!--<div ng-controller="clickCtrl">-->
+       <!--<div ng-click="myData.doClick($event)">click me!</div>-->
+    <div ng-controller="clickliCtrl">
+        <ul>
+            <li id="new" ng-repeat="item in myData.items" ng-click="myData.doClick(item,$event)">{{item.v}}</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artemis Angular</title>
+    <script src="../libs/angular.min.js"></script>
+    <script src="../controller/app.js"></script>
+    <style>
+        .ng-invalid.ng-dirty { border: 1px solid red; }
+    </style>
+</head>
+<body ng-app="myApp">
+<form name="myForm" ng-controller="frmCtrl">
+    userType: <input name="input" ng-model="userType" required>
+    <span class="error" ng-show="myForm.input.$error.required">Required</span><br>
+    userType = {{myForm.$pristine}}<br>
+myForm.input.$valid = {{myForm.input.$valid}}<br>
+myForm.input.$error = {{myForm.input.$error}}<br>
+myForm.$valid = {{myForm.$valid}}<br>
+myForm.$error.REQUIRED = {{!!myForm.$error.REQUIRED}}<br>
+</form>
+
+</body>
+</html>
