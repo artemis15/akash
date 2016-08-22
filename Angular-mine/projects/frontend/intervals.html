@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artemis Angular</title>
+    <script src="../libs/angular.min.js"></script>
+    <script src="../controller/app.js"></script>
+    <style>
+        .fieldValid {
+            border: 1px solid #00ff00;
+        }
+        .fieldInvalid {
+            border: 1px solid #ff0000;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+<hr/>
+<h2>TimeOut</h2>
+<div ng-controller="timeOutCtrl">
+   Timeout Event Occurred...check JS Console
+</div>
+<hr/>
+<h2>TimeOut with scope function</h2>
+<div ng-controller="timeOutCtrl2">
+    Timeout Event Occurred from scope function...check JS Console
+</div>
+<hr/>
+<h2>Interval</h2>
+<div ng-controller="intervalCtrl">
+    Interval Event Occurred ...check JS Console
+</div>
+</body>
+</html>

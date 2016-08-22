@@ -171,3 +171,38 @@ app.controller('mainController', function($scope) {
     };
 
 });
+
+/*
+ By default AngularJS already calls $digest() after the scheduled function call finishes,
+ so you don't have to do that explicitly. You can, however, specify if AngularJS should not call $digest() after the scheduled function call. If, for instance, your scheduled function call only updates an animation but does not change any $scope variables, then it is a waste of CPU time to call $digest() after the function finishes.
+
+ Both $timeout and $interval have a third, optional parameter which can specify if the $digest() method is to be executed after the scheduled function finishes. Actually, the third parameter specifies if the call to the scheduled function should be done inside an $apply() call.
+ A value of true means that the scheduled function should be called inside an $apply() call. A value of false means that it should not be called inside an $apply() call (meaning $digest() will not get called after the scheduled function finishes).
+*/
+
+
+app.controller("timeOutCtrl", function($scope,$timeout){
+    $timeout(callAtTimeout, 3000);
+});
+
+function callAtTimeout()
+{
+    console.log("timeout occurred");
+}
+
+app.controller("timeOutCtrl2",function($scope,$timeout,$log){
+    $scope.callAtTimeout2=function()
+    {
+        $log.log("in the console");
+    }
+    $timeout($scope.callAtTimeout2(),3000);
+})
+
+app.controller("intervalCtrl",function($scope,$interval){
+
+    $interval(callInterval,5000);
+});
+
+function callInterval(){
+    console.log("interval occurred");
+}
