@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artemis Angular</title>
+    <script src="../../libs/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="myApp">
+<h1>Custom Directive Introduction</h1>
+<p>
+    "AngularJS directives are what controls the rendering of the HTML inside an AngularJS application. Examples of directives are the interpolation directive ( {<code>{}</code>} ), the "<code>ng-repeat</code>" directive and "<code>ng-if</code> "directive.
+
+    It is possible to implement your own directives too. This is what AngularJS refers to as "teaching HTML new tricks"....."
+</p>
+<h1>Directive Types</h1>
+<ul>
+    <li>Element directives (try these only)</li>
+    <li>Attribute directives (try these only)</li>
+    <li>CSS directives</li>
+    <li>Comment directives</li>
+</ul>
+<div ng-controller="directiveCtrl">
+    <div>This will be replaced</div>
+</div>
+<abc></abc>
+<div ng-controller="userCtrl">
+    <usrinfo u="akash"></usrinfo>
+    <usrinfo u ="raj"></usrinfo>
+    <usrinfo u="artemis"></usrinfo>
+</div>
+
+</body>
+</html>
