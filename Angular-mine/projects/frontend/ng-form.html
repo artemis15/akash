@@ -90,8 +90,9 @@
     <h4>Pattern Validation</h4>
     <div ng-controller="patternCtrl">
         <ng-form name="mailForm">
+            <span ng-show="mailForm.mail.$error.pattern" style="color:red">Please enter correct email address.</span><br/>
             Email: <input type="text" ng-model="email" name="mail" ng-pattern="re" /><br />
-            <span ng-show="mailForm.mail.$error.pattern" style="color:red">Please enter correct email address.</span>
+
         </ng-form>
     </div>
 
