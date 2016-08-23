@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artemis Sharing info b/w controllers</title>
+    <script src="../../libs/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="parentCtrl">
+        <button ng-click="sendToChild()">Click to Share Data!</button>
+        <div ng-controller="siblingCtrl">
+            <button ng-click="sendToParent()">Click to send data to parent</button>
+        </div>
+    </div>
+
+<div ng-controller="sharingCtrl1">
+    Data from Another controller {{name}}
+    <br/><button ng-click="sharebt1()">Sharing from ctrl1</button>
+</div>
+    <div ng-controller="sharingCtrl2">
+        Data from Another controller {{name}}
+       <br/> <button ng-click="sharebt2()">Sharing from ctrl2</button>
+    </div>
+</body>
+</html>
