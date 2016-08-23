@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artemis Angular</title>
+    <script src="../../libs/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="myApp">
+    Types of injectable objects and components
+    <ul>
+        <li>Values</li>
+        <li>Factory</li>
+        <li>Services</li>
+        <li>Providers</li>
+        <li>Constant</li>
+    </ul>
+    These core types can be injected into each other using AngularJS dependency injection mechanism.
+  <hr/>
+    <h4>Value injection</h4>
+    <div ng-controller="valueCtrl">
+        Check Value in console when this div (valueCtrl) is triggered
+    </div>
+  <hr/>
+    <h4>Factory Method</h4>
+    Factory is a function that creates values. When a service, controller etc. needs a value injected from a factory, the factory creates the value on demand. Once created, the value is reused for all services, controllers etc. which need it injected. Thus, a factory differs from a value in that it can use a factory function to create the object it returns. You can also inject values into a factory for use when creating the object. You cannot do that with a value.<br/>
+<br/><div ng-controller="factCtrl">
+    Check Value in console when this div (factCtrl) is triggered
+</div><br/>
+    <div ng-controller="factCtrl2">
+        Check Value in console when this div (factCtrl2) is triggered i.e. injecting values into a factory
+    </div>
+
+<hr/>
+<h5>Service Injection</h5>
+    A service in AngularJS is a singleton JavaScript object which contains a set of functions. The functions contain whatever logic is necessary for the service to carry out its work.AngularJS services are created using the service() function on a module.
+<div ng-controller="serviceCtrl">
+    Check Value in console when this div (serviceCtrl) is triggered
+</div>
+    <div ng-controller="serviceCtrl2">
+        Check Value in console when this div (serviceCtrl2) is triggered i.e. injecting values into a service
+    </div>
+
+    <hr/>
+    <h5>Providers</h5>
+    Providers in AngularJS is the most flexible form of factory you can create. You register a provider with a module just like you do with a service or factory, except you use the provider() function instead.
+<br/>
+<div ng-controller="providerCtrl">
+    provider with click
+    <button ng-click="whenBtnClicked()">Click Me!</button>
+</div>
+</body>
+</html>
