@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artemis Angular</title>
+    <script src="../../../libs/angular.min.js"></script>
+    <script src="../../../libs/angular-sanitize.min.js"></script>
+    <script src="../../../controller/app2.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="bindCtrlSpecial">
+        <span ng-bind-html="myData.textf()"></span>
+    </div>
+</body>
+</html>

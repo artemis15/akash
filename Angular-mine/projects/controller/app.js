@@ -7,11 +7,23 @@ var app=angular.module("myApp",[]);
 app.run(function($rootScope) {
     $rootScope.valView = true;
 });
-app.controller("mainController",function($scope){
-    $scope.Hello2={};
-    $scope.Hello2.title="Akash";
-});
 
+app.controller("testCtrl",function ($scope) {
+    $scope.hello={};
+    $scope.hello.title="Artemis";
+});
+app.controller("bindCtrl",function ($scope) {
+    $scope.myData={};
+    $scope.myData.textf = function () {
+        return "My name is Artemis";
+    }
+});
+app.controller("bindCtrlSpecial",function ($scope) {
+    $scope.myData={};
+    $scope.myData.textf = function () {
+        var a= "I am an <code>HTML</code>string with " + "<a href='#'>links!</a> and other <em>stuff</em>";
+    }
+});
 app.controller("mainCtrl",function($scope){
     $scope.myData={};
     $scope.myData.showIt=false;
