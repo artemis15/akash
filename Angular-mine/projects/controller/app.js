@@ -41,7 +41,7 @@ app.controller("ifCtrl",function($scope){
 
 app.controller("includeCtrl",function($scope){
     $scope.myData={};
-    $scope.myData.showIt=true;
+    $scope.myData.showIt=false;
 });
 
 app.controller("repeatCtrl",function($scope){
@@ -58,7 +58,11 @@ app.controller("repeatCtrl",function($scope){
     $scope.reverse=true;
     $scope.myData.textAk="akash";
 });
-
+app.filter('myFilter1',function(){
+    return function(s){
+        return s.substring(0,3);
+    }
+});
 app.filter('myFilter',function(){
     return function(s,sI,eI){
         return s.substring(parseInt(sI),parseInt(eI));

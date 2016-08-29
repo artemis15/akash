@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artemis Angular</title>
+    <script src="../../../libs/angular.min.js"></script>
+    <script src="../../../controller/app.js"></script>
+</head>
+<body ng-app="myApp">
+<h4>Normal Filter</h4>
+<div ng-controller="repeatCtrl">
+    <ol>
+        <li ng-repeat="item in myData.items | filter:filterArray">
+            {{item.text}}
+        </li>
+    </ol>
+</div>
+<hr/>
+<h4>Complex Filter</h4>
+<div ng-controller="repeatCtrl">
+    <ol>
+        <li ng-repeat="item in myData.items | filter:filterArray">
+            {{item.text}} : {{$first}}, {{$middle}}, {{$last}}
+        </li>
+    </ol>
+</div>
+<hr/>
+<h4>Complex Filter - part 2 with OrderBY</h4>
+<div ng-controller="repeatCtrl">
+    <ol>
+        <li ng-repeat="item in myData.items | orderBy:sortField:reverse">
+            {{item.text}} : {{$first}}, {{$middle}}, {{$last}}
+        </li>
+    </ol>
+
+</div>
+<hr/>
+<h4>Complex Filter - part 3 - Chaining Filters</h4>
+<div ng-controller="repeatCtrl">
+    <div>Filtered: {{myData.textAk | limitTo:3 | uppercase}}</div>
+</div>
+<hr/>
+<h4>Complex Filter - part 4 - Custom Filters</h4>
+<div ng-controller="repeatCtrl">
+    <h5>Without Parameter</h5>
+    <div>Filtered: {{myData.textAk | myFilter1}}</div>
+    <h5>With Parameter</h5>
+    <div>Filtered: {{myData.textAk | myFilter:2:4}}</div>
+</div>
+</body>
+</html>
