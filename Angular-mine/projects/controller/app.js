@@ -53,7 +53,7 @@ app.controller("repeatCtrl",function($scope){
     $scope.filterArray=function(i){
         if(i.text=="two") return false;
         return true;
-    }
+    };
     $scope.sortField="text";
     $scope.reverse=true;
     $scope.myData.textAk="akash";
@@ -97,17 +97,28 @@ app.controller("watchCtrl",function($scope){
         alert(++$scope.myData.fooCount);
     }
 });
+
 app.controller("applyCtrl",function($scope){
    $scope.data={time:new Date()};
-    $scope.updateTime=function(){
-        $scope.data.time=new Date();
-    }
+    $scope.updateTime=function() {
+        $scope.data.time = new Date();
+    };
+    /*
+    document.getElementById("updateTimeBtn").addEventListener('click',function(){
+
+     alert("updates time clicked");
+     $scope.data.time=new Date();
+     //$scope.$digest();
+     });
+    */
+
     document.getElementById("updateTimeBtn").addEventListener('click',function(){
         $scope.$apply(function(){
             alert("updates time clicked");
             $scope.data.time=new Date();
         });
     });
+
 });
 
 app.controller("serviceGetCtrl",function($scope,$http){
@@ -129,7 +140,7 @@ app.controller("serviceGetCtrl",function($scope,$http){
     function _error(response){
 
         $scope.status="500";
-        $scope.error="not able to connect";
+        $scope.error="not able to connect: "+response.data;
     }
 });
 
@@ -210,9 +221,9 @@ app.controller("timeOutCtrl2",function($scope,$timeout,$log){
     $scope.callAtTimeout2=function()
     {
         $log.log("in the console");
-    }
+    };
     $timeout($scope.callAtTimeout2(),3000);
-})
+});
 
 app.controller("intervalCtrl",function($scope,$interval){
 

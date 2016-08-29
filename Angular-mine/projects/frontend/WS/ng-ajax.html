@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Angular Training</title>
-    <script src="../libs/angular.min.js"></script>
-    <script src="../controller/app.js"></script>
+    <script src="../../libs/angular.min.js"></script>
+    <script src="../../controller/app.js"></script>
 </head>
 <body ng-app="myApp">
-    <!--<div ng-controller="clickCtrl">-->
-       <!--<div ng-click="myData.doClick($event)">click me!</div>-->
     <div ng-controller="serviceGetCtrl">
         <div ng-if="status=='200'">
             <h1>{{message}}</h1>
@@ -17,7 +15,10 @@
                 <Strong>Name: </Strong>{{user.name}}
             </div>
             <div>
-               <strong>WebSite: </strong> <a href="{{user.blog}}"  target="_blank">{{user.blog}}</a>
+               <strong>Portfolio: </strong> <a href="{{user.blog}}"  target="_blank">{{user.blog}}</a>
+            </div>
+            <div>
+                <strong>Personal Blog: </strong> <a href="{{user.location}}"  target="_blank">{{user.location}}</a>
             </div>
             <div>
                 <img ng-src="{{user.avatar_url}}" title="{{user.name}}"/>
