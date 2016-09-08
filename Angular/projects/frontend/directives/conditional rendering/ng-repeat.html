@@ -9,7 +9,8 @@
 <body ng-app="myApp">
 <div ng-controller="repeatCtrl">
     <ol>
-        <!-- <li ng-repeat="theItem in myData.items">{{theItem.text}}</li>-->
+         <!--<li ng-repeat="theItem in myData.items">{{theItem.text}}</li>-->
+       <!-- <li ng-repeat="theItem in myData.getItems()">{{theItem.text}}</li>-->
         <li ng-repeat="(name,value) in myData.myObjects">{{name}}={{value}}</li>
     </ol>
 </div>

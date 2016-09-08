@@ -3,7 +3,7 @@
  */
 
 //var app=angular.module("myApp",[]);
-var app = angular.module('myApp', ['ngSanitize'])
+var app = angular.module('myApp', ['ngSanitize']);
 
 app.run(function($rootScope) {
     $rootScope.valView = true;

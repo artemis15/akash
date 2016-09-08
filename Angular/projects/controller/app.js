@@ -11,9 +11,11 @@ app.run(function($rootScope) {
 app.controller("testCtrl",function ($scope) {
     $scope.hello={};
     $scope.hello.title="Artemis";
+    $scope.hello.name="Utsav";
 });
 app.controller("bindCtrl",function ($scope) {
     $scope.myData={};
+    $scope.myData.obj="Hola my name is Artemis";
     $scope.myData.textf = function () {
         return "My name is Artemis";
     }
@@ -26,7 +28,7 @@ app.controller("bindCtrlSpecial",function ($scope) {
 });
 app.controller("mainCtrl",function($scope){
     $scope.myData={};
-    $scope.myData.showIt=false;
+    $scope.myData.showIt=true;
 });
 
 app.controller("switchCtrl",function($scope){
@@ -36,7 +38,12 @@ app.controller("switchCtrl",function($scope){
 
 app.controller("ifCtrl",function($scope){
     $scope.myData={};
-    $scope.myData.showIt=true;
+    $scope.myData.showIt=false;
+});
+
+app.controller("newifCtrl",function($scope){
+   $scope.myD={};
+   $scope.myD.showIt=false;
 });
 
 app.controller("includeCtrl",function($scope){
