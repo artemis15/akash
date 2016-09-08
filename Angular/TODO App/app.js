@@ -5,9 +5,9 @@ var app = angular.module('Todo', []);
 app.controller('TodoCtrl', function($scope) {
     $scope.newTodo = '';
     $scope.todos = [
-        'Learn Sketch',
-        'Look at Dribbble and feel inferior',
-        'Actually learn how to use the Pen tool'
+        'Learn Angular',
+        'Look at LinkedIn and connect with akash',
+        'Actually learn how to use github'
     ];
     $scope.done = function(todo) {
         var indexOf = $scope.todos.indexOf(todo);
